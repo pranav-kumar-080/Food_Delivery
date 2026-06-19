@@ -41,8 +41,8 @@ const placeOrder = async(req,res)=>{
         const session = await stripe.checkout.sessions.create({
             line_items:line_items,
             mode:'payment',
-            success_url:`http://localhost:5174/verify?success=true&orderId=${newOrder._id}`,
-            cancel_url:`http://localhost:5174/verify?success=false&orderId=${newOrder._id}`,
+            success_url:`${process.env.FRONTEND_URL || "http://localhost:5173"}/verify?success=true&orderId=${newOrder._id}`,
+            cancel_url:`${process.env.FRONTEND_URL || "http://localhost:5173"}/verify?success=false&orderId=${newOrder._id}`,
         });
         
         res.json({success:true,session_url:session.url});
