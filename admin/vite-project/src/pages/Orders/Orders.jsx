@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Orders.css";
-import axios from "axios";
+import adminAxios from "../../utils/adminAxios";
 import { toast } from "react-toastify";
 
 const Orders = ({ url }) => {
@@ -8,7 +8,7 @@ const Orders = ({ url }) => {
 
   const fetchAllOrders = async () => {
     try {
-      const response = await axios.get(`${url}/api/order/list`);
+      const response = await adminAxios.get(`${url}/api/order/list`);
       if (response.data.success) {
         setOrders(response.data.orders || []);
       } else {
@@ -20,7 +20,7 @@ const Orders = ({ url }) => {
   };
 
   const statusHandler = async(event,orderId) => {
-    const response = await axios.post(url+"/api/order/status",{orderId:orderId,status:event.target.value});
+    const response = await adminAxios.post(url+"/api/order/status",{orderId:orderId,status:event.target.value});
     if(response.data.success){
       toast.success(response.data.message || "Status Updated");
       fetchAllOrders();

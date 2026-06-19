@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./List.css";
-import axios from "axios";
+import adminAxios from "../../utils/adminAxios";
 import { toast } from "react-toastify";
 
 const List = ({ url }) => {
@@ -8,7 +8,7 @@ const List = ({ url }) => {
   const [list, setList] = useState([]);
 
   const fetchList = async () => {
-    const response = await axios.get(`${url}/api/food/list`);
+    const response = await adminAxios.get(`${url}/api/food/list`);
     if (response.data.success) {
       setList(response.data.data);
     } else {
@@ -17,7 +17,7 @@ const List = ({ url }) => {
   }
 
   const removeFood = async (e, id) => {
-    const response = await axios.post(`${url}/api/food/remove`, { id });
+    const response = await adminAxios.post(`${url}/api/food/remove`, { id });
     if (response.data.success) {
       toast.success(response.data.message);
       await fetchList();
