@@ -5,16 +5,8 @@ import adminAuthMiddleware from "../middleware/adminAuth.js";
 
 const foodRouter = express.Router();
 
-//Image Storage Engine
-
-const storage = multer.diskStorage({
-    destination:"uploads",
-    filename:(req,file,cb)=>{
-        return cb(null,`${Date.now()}${file.originalname}`)
-    }
-})
-
-const upload = multer({storage:storage})
+// Use memory storage — no disk writes, works on Vercel serverless
+const upload = multer({ storage: multer.memoryStorage() });
 
 foodRouter.post("/add", adminAuthMiddleware, upload.single("image"), addFood);
 foodRouter.get("/list",listFood);

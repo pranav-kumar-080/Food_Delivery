@@ -11,7 +11,7 @@ const FoodItem = ({ id, name, description, price, image }) => {
         <div className="food-item">
             {/* Image + cart controls */}
             <div className="food-item-img-container">
-                <img src={url+"/images/"+image} alt={name} className="food-item-image" />
+                <img src={image} alt={name} className="food-item-image" />
 
                 {quantity === 0 ? (
                     <div className="food-item-add" onClick={() => addToCart(id)}>

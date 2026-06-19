@@ -27,7 +27,7 @@ const MyOrder = () => {
                     return <div key={index} className="my-orders-order">
                         <img src={assets.parcel_icon} alt="" />
                         <p>{order.items.map((item,i)=>{
-                            return <React.Fragment key={i}> <img src={url+"/images/"+item.image} alt={item.name} />
+                            return <React.Fragment key={i}> <img src={item.image} alt={item.name} />
                             <p>{item.name + " x " + item.quantity}</p>
                             </React.Fragment>
                         })}</p>
