@@ -1,0 +1,172 @@
+/* ══════════════════════════════════════════════
+   Header Component
+   ══════════════════════════════════════════════ */
+
+/* ── Wrapper ────────────────────────────────── */
+.header {
+    height: 34vw;
+    min-height: 320px;
+    width: 85%;
+    max-width: 1400px;
+    position: relative;
+    margin: 24px auto 32px;
+    background: url('/header_img.png') center / cover no-repeat;
+    border-radius: var(--radius-lg, 40px);
+    overflow: hidden;
+
+    /* Fade-in on page load */
+    animation: headerFadeIn 0.9s ease-out both;
+}
+
+/* Subtle dark gradient so white text stays readable */
+.header::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        rgba(0, 0, 0, 0.45) 0%,
+        rgba(0, 0, 0, 0.10) 60%,
+        transparent 100%
+    );
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+/* ── Content block ──────────────────────────── */
+.header-content {
+    position: absolute;
+    top: 50%;
+    left: 6%;
+    transform: translateY(-50%);
+    max-width: 38%;
+    z-index: 1;          /* above the ::after overlay */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+
+    /* Slide-up entrance — starts after header fade */
+    animation: contentSlideUp 0.8s 0.35s ease-out both;
+}
+
+.header-content h2 {
+    font-size: clamp(26px, 3vw, 42px);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    text-transform: capitalize;
+}
+
+.header-content p {
+    font-size: clamp(14px, 1.5vw, 18px);
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.55;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.header-content button {
+    background-color: #ffffff;
+    color: var(--clr-primary, #E53935);
+    border: none;
+    padding: 14px 36px;
+    border-radius: var(--radius-pill, 999px);
+    font-size: clamp(14px, 1.2vw, 17px);
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.15s ease,
+                box-shadow 0.25s ease;
+    box-shadow: 0 4px 16px rgba(255, 107, 53, 0.25);
+}
+
+.header-content button:hover {
+    background-color: var(--clr-primary, #E53935);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.40);
+}
+
+.header-content button:active {
+    transform: translateY(0);
+}
+
+/* ── Keyframes ──────────────────────────────── */
+
+/* The whole header card fades in from 0 → 1 opacity */
+@keyframes headerFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* The text slides up after the header has appeared */
+@keyframes contentSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(calc(-50% + 20px));
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-50%);
+    }
+}
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 1024px) {
+    .header {
+        height: 40vw;
+        width: 90%;
+    }
+
+    .header-content {
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 55vw;
+        min-height: 260px;
+        width: 92%;
+        margin: 16px auto 24px;
+        border-radius: 24px;
+    }
+
+    .header-content {
+        position: static;
+        transform: none;
+        max-width: 100%;
+        width: 100%;
+        padding: 28px 24px 32px;
+        align-items: center;
+        text-align: center;
+        animation: contentSlideUp-mobile 0.8s 0.35s ease-out both;
+    }
+
+    @keyframes contentSlideUp-mobile {
+        from { opacity: 0; transform: translateY(16px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        height: auto;
+        min-height: 0;
+        border-radius: 20px;
+    }
+
+    .header-content button {
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,126 @@
+/* ══════════════════════════════════════════════
+   Footer Component
+   ══════════════════════════════════════════════ */
+
+.footer {
+    background-color: #2d2d3e;
+    color: #a0a0b0;
+    margin-top: 60px;
+}
+
+/* ── Main content row ───────────────────────── */
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+    padding: 56px 8% 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ── Left column ────────────────────────────── */
+.footer-logo {
+    width: 160px;
+    height: auto;
+    margin-bottom: 18px;
+    /* White background pill so the logo reads clearly on the dark footer */
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 8px 14px;
+    object-fit: contain;
+}
+
+.footer-content-left p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #a0a0b0;
+    max-width: 300px;
+    margin-bottom: 22px;
+}
+
+.footer-social-icons {
+    display: flex;
+    gap: 14px;
+}
+
+.footer-social-icons img {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    filter: brightness(0) invert(1);
+}
+
+.footer-social-icons img:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+/* ── Center & Right columns ─────────────────── */
+.footer-content-center h2,
+.footer-content-right h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.footer-content-center ul,
+.footer-content-right ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-content-center ul li,
+.footer-content-right ul li {
+    font-size: 14px;
+    color: #a0a0b0;
+    cursor: pointer;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.footer-content-center ul li:hover,
+.footer-content-right ul li:hover {
+    color: #E53935;
+    padding-left: 4px;
+}
+
+/* ── Bottom bar ─────────────────────────────── */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 18px 8%;
+    text-align: center;
+    font-size: 13px;
+    color: #606070;
+}
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 900px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+    }
+
+    .footer-content-left {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 560px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        padding: 40px 6% 28px;
+    }
+
+    .footer-content-left {
+        grid-column: unset;
+    }
+}

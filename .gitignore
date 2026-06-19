@@ -1,0 +1,53 @@
+# ===========================
+# Root-level .gitignore
+# (Each sub-project also has its own .gitignore)
+# ===========================
+
+# Dependencies (catch-all across all sub-projects)
+**/node_modules/
+
+# Environment Variables (NEVER commit these!)
+**/.env
+**/.env.*
+*.env
+
+# Build outputs
+**/dist/
+**/build/
+**/dist-ssr/
+
+# Uploaded files (backend user uploads)
+**/uploads/
+
+# Logs
+**/*.log
+**/logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Cache
+**/.cache/
+**/.vite/
+*.local
+
+# Editor & IDE
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini

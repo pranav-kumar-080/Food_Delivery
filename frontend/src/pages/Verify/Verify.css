@@ -1,0 +1,24 @@
+/* ── Full-screen loading overlay while payment is being verified ── */
+.verify {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background: #f9f9f9;
+}
+
+/* ── Animated spinner ──────────────────────────────────────────── */
+.spinner {
+    width: 64px;
+    height: 64px;
+    border: 6px solid #e0e0e0;
+    border-top-color: #E53935;
+    border-radius: 50%;
+    animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,136 @@
+/* ============================================
+   ORDERS PAGE — Admin Panel
+   ============================================ */
+
+.orders {
+    flex: 1;
+    padding: 30px 40px;
+    background: #f9fafb;
+}
+
+.orders h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #212121;
+    margin-bottom: 24px;
+}
+
+/* ---- Orders list ---- */
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ---- Order card ---- */
+.order-card {
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr) 190px;
+    gap: 18px;
+    align-items: start;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 18px 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s ease;
+}
+
+.order-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* ---- Item count badge ---- */
+.order-icon-wrap {
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    background: #FFEBEE;
+    color: #E53935;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #FFCDD2;
+}
+
+/* ---- Order detail text ---- */
+.order-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.order-items {
+    color: #212121;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.order-name {
+    color: #212121;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.order-address,
+.order-phone {
+    color: #757575;
+    font-size: 13px;
+}
+
+/* ---- Right meta column ---- */
+.order-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.order-meta > p {
+    color: #757575;
+    font-size: 13px;
+    margin: 0;
+}
+
+.order-amount {
+    color: #16a34a !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+}
+
+/* ---- Status select ---- */
+.order-status {
+    background: #f9fafb;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 6px;
+    color: #212121;
+    font-size: 13px;
+    font-family: "Outfit", sans-serif;
+    padding: 7px 10px;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+}
+
+.order-status:focus {
+    border-color: #E53935;
+    box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.12);
+}
+
+/* ---- Empty state ---- */
+.orders-empty {
+    color: #9ca3af;
+    text-align: center;
+    padding: 50px;
+    font-size: 15px;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+}

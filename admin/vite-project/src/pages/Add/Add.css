@@ -1,0 +1,149 @@
+/* ============================================
+   ADD PAGE — Admin Panel
+   ============================================ */
+
+.add {
+    flex: 1;
+    padding: 30px 40px;
+    background: #f9fafb;
+}
+
+.add h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #212121;
+    margin-bottom: 28px;
+}
+
+/* ---- Shared utility ---- */
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* ---- Form card ---- */
+.add form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    max-width: 560px;
+    background: #ffffff;
+    padding: 32px 36px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* ---- Field labels ---- */
+.add form p,
+.add form label > span {
+    font-size: 13px;
+    font-weight: 600;
+    color: #757575;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+/* ---- Image upload ---- */
+.add-image-upload label {
+    cursor: pointer;
+    width: fit-content;
+}
+
+.add-image-upload label img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px dashed #d1d5db;
+    padding: 4px;
+    background: #f9fafb;
+    transition: border-color 0.2s ease;
+}
+
+.add-image-upload label img:hover {
+    border-color: #E53935;
+}
+
+/* ---- Text inputs / textarea / select ---- */
+.add-product-details input,
+.add-product-description textarea,
+.add-category select,
+.add-price input {
+    padding: 11px 14px;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: "Outfit", sans-serif;
+    color: #212121;
+    background: #f9fafb;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.add-product-details input {
+    width: 100%;
+    max-width: 480px;
+}
+
+.add-product-description textarea {
+    width: 100%;
+    max-width: 480px;
+    resize: vertical;
+}
+
+.add-product-details input:focus,
+.add-product-description textarea:focus,
+.add-category select:focus,
+.add-price input:focus {
+    border-color: #E53935;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.12);
+}
+
+/* ---- Category + Price row ---- */
+.add-category-price {
+    display: flex;
+    gap: 24px;
+}
+
+.add-category,
+.add-price {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.add-category select {
+    padding: 10px 12px;
+    min-width: 160px;
+}
+
+.add-price input {
+    width: 140px;
+}
+
+/* ---- Submit button ---- */
+.add-btn {
+    width: fit-content;
+    padding: 12px 32px;
+    background-color: #E53935;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+.add-btn:hover {
+    background-color: #C62828;
+    transform: translateY(-1px);
+}
+
+.add-btn:active {
+    transform: translateY(0);
+}

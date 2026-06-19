@@ -1,0 +1,114 @@
+.my-orders {
+    padding: 40px 6vw;
+    min-height: 80vh;
+}
+
+.my-orders h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 28px;
+    color: #1a1a1a;
+}
+
+/* ── Order cards wrapper ─────────────────────────── */
+.my-orders .container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ── Single order row ────────────────────────────── */
+.my-orders-order {
+    display: grid;
+    grid-template-columns: 40px 2fr 1fr 80px 160px 120px;
+    align-items: center;
+    gap: 20px;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 18px 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.my-orders-order:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Parcel icon */
+.my-orders-order > img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+}
+
+/* Items text (name x qty) */
+.my-orders-order > p:nth-child(2) {
+    font-size: 14px;
+    color: #4a4a4a;
+    line-height: 1.6;
+}
+
+/* Amount */
+.my-orders-order > p:nth-child(3) {
+    font-size: 16px;
+    font-weight: 700;
+    color: #E53935;
+}
+
+/* Items count */
+.my-orders-order > p:nth-child(4) {
+    font-size: 13px;
+    color: #777;
+    white-space: nowrap;
+}
+
+/* Status */
+.my-orders-order > p:nth-child(5) {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #333;
+    white-space: nowrap;
+}
+
+.my-orders-order > p:nth-child(5) span {
+    color: #27ae60;
+    font-size: 10px;
+}
+
+/* Track Order button */
+.my-orders-order button {
+    background: #E53935;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.my-orders-order button:hover {
+    background: #e85a25;
+    transform: scale(1.03);
+}
+
+/* ── Responsive ──────────────────────────────────── */
+@media (max-width: 768px) {
+    .my-orders-order {
+        grid-template-columns: 36px 1fr;
+        grid-template-rows: auto;
+        gap: 10px 14px;
+    }
+
+    .my-orders-order > p,
+    .my-orders-order > button {
+        grid-column: 2;
+    }
+}

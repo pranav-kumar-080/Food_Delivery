@@ -1,0 +1,138 @@
+/* ── Explore Menu ────────────────────────────────────── */
+.explore-menu {
+    padding: 40px 8%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.explore-menu h1 {
+    color: #2c2c2c;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    margin-bottom: 8px;
+}
+
+.explore-menu-text {
+    max-width: 600px;
+    font-size: 14px;
+    color: #616161;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* ── Categories row ──────────────────────────────────── */
+.explore-menu-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 24px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+/* Hide scrollbar but keep functionality */
+.explore-menu-list::-webkit-scrollbar {
+    display: none;
+}
+
+.explore-menu-list-item {
+    min-width: 110px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.25s ease;
+    user-select: none;
+}
+
+.explore-menu-list-item:hover {
+    transform: translateY(-4px);
+}
+
+/* ── Category image ──────────────────────────────────── */
+.explore-menu-list-item img {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.25s ease;
+}
+
+.explore-menu-list-item:hover img {
+    transform: scale(1.12);
+}
+
+/* ── Category text ───────────────────────────────────── */
+.explore-menu-list-item p {
+    margin-top: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #6b6b6b;
+    letter-spacing: 0.2px;
+    transition: color 0.25s ease;
+    text-transform: capitalize;
+}
+
+.explore-menu-list-item:hover p {
+    color: #E53935;
+}
+
+/* ── Active (selected) state ─────────────────────────── */
+.explore-menu-list-item.active {
+    transform: translateY(-4px);
+}
+
+.explore-menu-list-item img.active {
+    border: 3px solid #E53935;
+    box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.15);
+    transform: scale(1.08);
+}
+
+.explore-menu-list-item.active p {
+    color: #E53935;
+    font-weight: 700;
+}
+
+/* ── Divider ─────────────────────────────────────────── */
+.explore-menu hr {
+    border: none;
+    border-top: 2px solid #f0f0f0;
+    margin: 0;
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 768px) {
+    .explore-menu {
+        padding: 32px 5%;
+    }
+
+    .explore-menu h1 {
+        font-size: 24px;
+    }
+
+    .explore-menu-text {
+        font-size: 13px;
+    }
+
+    .explore-menu-list {
+        gap: 16px;
+    }
+
+    .explore-menu-list-item {
+        min-width: 90px;
+    }
+
+    .explore-menu-list-item img {
+        max-width: 100px;
+    }
+
+    .explore-menu-list-item p {
+        font-size: 12px;
+    }
+}
+
+/* scroll arrow for overflow-x */
+.explore-menu-list-item:last-child {
+    margin-right: 0;
+}
