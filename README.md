@@ -195,9 +195,6 @@ Each sub-project has a `.env.example` file. Copy it to `.env` and fill in your v
 
 ---
 
-## 📄 License
-
-This project is licensed under the **ISC License**.
 
 ---
 
